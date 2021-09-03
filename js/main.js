@@ -132,14 +132,12 @@ const handleCheckAnswer = button => {
             button.style.backgroundColor = "white";
             button.style.color = "black";
             button.style.borderColor = "black";
-            activeBtNext();
             scorePositive++;
             btNext.style.display = 'block';
         } else {
             button.style.backgroundColor = "white";
             button.style.color = "black";
             button.style.borderColor = "black";
-            activeBtNext();
             btNext.style.display = 'block';
         }
     } 
@@ -180,10 +178,6 @@ const end = () => {
     boxScore.innerHTML += `<p class="fs-1 text-center text-white my-1 text-capitalize">score: ${scorePositive}</p>`
 }
 
-const activeBtNext = () => {
-    btNext.onclick = handleNextQuestion
-}
-
 const hideItems = () => {
     btNext.style.display = 'none';
     progressOne.classList.add('invisible');
@@ -193,3 +187,4 @@ const hideItems = () => {
 //Events
 mainForm.onsubmit = fetchDataAPI
 window.onload = hideItems
+btNext.onclick = handleNextQuestion
